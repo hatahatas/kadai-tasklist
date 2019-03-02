@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   
 
   get 'users/new'
+  
+
 
   
   
@@ -28,5 +30,7 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
+  put 'tasks/:id', to: 'tasks#update'
+  put 'tasks/:id',to: 'tasks#edit'
 
 end
