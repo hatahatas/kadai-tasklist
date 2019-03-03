@@ -14,5 +14,9 @@ class ApplicationController < ActionController::Base
   def counts(user)
     @count_tasks = user.tasks.count
   end 
-  
+  before_action :set_current_user
+
+def set_current_user
+  @current_user = User.find_by(id: session[:user_id])
+end
 end
